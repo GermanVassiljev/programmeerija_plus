@@ -3,10 +3,39 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="programmeerija_plus.View.Menu">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout BackgroundColor="SkyBlue">
+            <Frame BackgroundColor="MidnightBlue">
+                <Label HorizontalOptions="Center"
+                       BackgroundColor="MidnightBlue"
+                       TextColor="White" 
+                       FontSize="Large">
+                    Programmeerija +
+                </Label>
+            </Frame>
+            
+            <Button HorizontalOptions="Center"
+                    BackgroundColor="MidnightBlue"
+                    TextColor="White"
+                    FontSize="Medium"
+                    Text="Plannid"
+                    CharacterSpacing="5"
+                    WidthRequest="500"
+                    Margin="10"
+                    >
+            
+            </Button>
+            
+            <Button HorizontalOptions="Center"
+                    BackgroundColor="MidnightBlue"
+                    TextColor="White"
+                    FontSize="Medium"
+                    Text="Sätted"
+                    CharacterSpacing="5"
+                    WidthRequest="500"
+                    Margin="10"
+                    >
+
+            </Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
