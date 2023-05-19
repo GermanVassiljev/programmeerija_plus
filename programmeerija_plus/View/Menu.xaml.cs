@@ -12,7 +12,7 @@ namespace programmeerija_plus.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Menu : ContentPage
     {
-        List<string> nuppid = new List<string> {"Plaanid", "Sätted" };
+        List<string> nuppid = new List<string> {"Plaanid", "Uus","Sätted" };
         public Menu()
         {
             InitializeComponent();
@@ -26,7 +26,9 @@ namespace programmeerija_plus.View
                 TextColor = Color.White,
                 FontSize = 26,
                 Text = "Programmeerija +",
-                WidthRequest = 400
+                WidthRequest = 400,
+                Padding= 5,
+                
             };
             layout.Children.Add(Tekst);
             for (int i = 0; i < nuppid.Count; i++)
@@ -36,11 +38,12 @@ namespace programmeerija_plus.View
                     HorizontalOptions = LayoutOptions.Center,
                     BackgroundColor = Color.MidnightBlue,
                     TextColor = Color.White,
-                    FontSize = 14,
+                    FontSize = 16,
                     Text = nuppid[i],
-                    CharacterSpacing = 5,
+                    CharacterSpacing = 3,
                     WidthRequest = 500,
                     Margin = 10,
+                    CornerRadius = 10,
                 };
                 e.Clicked += E_Clicked;
                 layout.Children.Add(e);
@@ -58,6 +61,10 @@ namespace programmeerija_plus.View
             else if (nupp.Text == nuppid[1])
             {
                 await Navigation.PushAsync(new NavigationPage(new Satted()));
+            }
+            else if (nupp.Text == nuppid[2])
+            {
+                await Navigation.PushAsync(new NavigationPage(new Uus()));
             }
         }
     }
