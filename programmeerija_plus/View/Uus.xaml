@@ -2,11 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="programmeerija_plus.View.Uus">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+    <StackLayout BackgroundColor="SkyBlue">
+        <Label x:Name="label1"  Text="Pealkiri" FontSize="Medium" BackgroundColor="MidnightBlue" TextColor="White"/>
+        <Entry Text="{Binding Title}"/>
+        <Label x:Name="label2" Text="Tegevused" FontSize="Medium"/>
+        <Entry  Text="{Binding Tegevused}"/>
+        <Label x:Name="label3" Text="Fail" FontSize="Medium"/>
+        <Entry Text="{Binding Fail}"/>
+        <Label x:Name="label4" Text="Kuni" FontSize="Medium"/>
+        <DatePicker Date="{Binding Kuni}"/>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Loo" Clicked="LooPlaan"/>
+            <Button Text="Sulge" Clicked="Sulge"/>
         </StackLayout>
-    </ContentPage.Content>
+    </StackLayout>
 </ContentPage>

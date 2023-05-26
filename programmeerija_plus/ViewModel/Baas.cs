@@ -15,7 +15,11 @@ namespace programmeerija_plus.ViewModel
     public partial class Baas
     {
         string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "vaartused.db");
-        SQLiteConnection connection = new SQLiteConnection(path);
+        public Baas()
+        {
+            SQLiteConnection connection = new SQLiteConnection(path);
+        }       
+        
         
     }
 }

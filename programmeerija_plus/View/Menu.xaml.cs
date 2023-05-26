@@ -1,4 +1,5 @@
-﻿using System;
+﻿using programmeerija_plus.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -60,11 +61,14 @@ namespace programmeerija_plus.View
             }
             else if (nupp.Text == nuppid[1])
             {
-                await Navigation.PushAsync(new NavigationPage(new Satted()));
+                Vaartused vaart = new Vaartused();
+                Uus uus = new Uus();
+                uus.BindingContext = vaart;
+                await Navigation.PushAsync(uus);
             }
             else if (nupp.Text == nuppid[2])
-            {
-                await Navigation.PushAsync(new NavigationPage(new Uus()));
+            { 
+                await Navigation.PushAsync(new NavigationPage(new Satted()));
             }
         }
     }

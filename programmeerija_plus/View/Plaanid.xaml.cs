@@ -18,12 +18,20 @@ namespace programmeerija_plus.View
         public Plaanid()
         {
             InitializeComponent();
+        }
 
+        protected override void OnAppearing()
+        {
+            plaanList.ItemsSource = App.Andmebaas.HangiUksus();
+            base.OnAppearing();
+        }
 
-            //foreach (App.andmebaas. in collection)
-            //{
-
-            //}
+        private async void plaanList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Vaartused selectedPlaan = (Vaartused)e.SelectedItem;
+            Plaan plaan = new Plaan();
+            plaan.BindingContext= selectedPlaan;
+            await Navigation.PushAsync(plaan);
         }
     }
 }

@@ -10,10 +10,10 @@ namespace programmeerija_plus.Model
     {
         [PrimaryKey, AutoIncrement, Column("Id")]
         public int Id { get; set; }
-        public string nimi { get; set; }
-        public string tegevused { get; set; }
-        public string fail { get; set; }
-        public DateTime alates { get; set; }
-        public DateTime kuni { get; set; }
+        public string Title { get; set; }
+        public string Tegevused { get; set; }
+        public string Fail { get; set; }
+        public DateTime Alates { get; set; }
+        public DateTime Kuni { get; set; }
     }
 }

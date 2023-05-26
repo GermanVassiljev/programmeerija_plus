@@ -28,15 +28,12 @@ namespace programmeerija_plus.Model
         }
         public int SalvestaUksus(Vaartused item)
         {
-            if (item.Id != 0)
-            {
-                andmebaas.Update(item);
-                return item.Id;
-            }
-            else
-            {
-                return andmebaas.Insert(item);
-            }
+            andmebaas.Update(item);
+            return item.Id;
+        }
+        public int LooUksus(Vaartused item)
+        {
+            return andmebaas.Insert(item);
         }
     }
 }
