@@ -3,14 +3,49 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="programmeerija_plus.View.Plaanid">
     <StackLayout BackgroundColor="SkyBlue">
-        <Label Text="Plaanid" BackgroundColor="MidnightBlue"/>
-        <ListView x:Name="plaanList" ItemsSource="{Binding}" ItemSelected="plaanList_ItemSelected">
+        <Label 
+            Text="Plaanid" 
+            BackgroundColor="MidnightBlue" 
+            TextColor="White"
+            Padding="5"
+            FontSize="20"
+            />
+        <ListView 
+            x:Name="plaanList" 
+            ItemsSource="{Binding}" 
+            ItemSelected="plaanList_ItemSelected"
+            >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <ViewCell.View>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding Title}" FontSize="Medium"/>
+                            <StackLayout 
+                                Orientation="Horizontal"
+                                BackgroundColor="MidnightBlue"
+                                Margin="10"
+                                >
+                                
+                                <Label 
+                                    Text="Pealkiri: " 
+                                    FontSize="Medium"
+                                    TextColor="White"
+                                    />
+                                <Label 
+                                    Text="{Binding Title}" 
+                                    FontSize="Medium"
+                                    TextColor="White"
+                                    />
+                                <Label 
+                                    Text="{Binding Kuni}" 
+                                    FontSize="Medium"
+                                    TextColor="White"
+                                    />
+                                <Label 
+                                    Text="{Binding Tegevused}" 
+                                    FontSize="Medium"
+                                    TextColor="White"
+                                    />
+
                             </StackLayout>
                         </ViewCell.View>
                     </ViewCell>

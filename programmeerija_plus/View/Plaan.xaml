@@ -10,7 +10,7 @@
         <Label Text="Fail"/>
         <Entry Text="{Binding Fail}"/>
         <Label Text="Kuni"/>
-        <DatePicker/>
+        <DatePicker Date="{Binding Kuni}"/>
         <StackLayout Orientation="Horizontal">
             <Button Text="Salvesta" Clicked="SalvestaPlaan"/>
             <Button Text="Kustuta" Clicked="KustutaPlaan"/>
