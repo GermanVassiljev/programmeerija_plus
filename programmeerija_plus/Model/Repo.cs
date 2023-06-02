@@ -31,6 +31,7 @@ namespace programmeerija_plus.Model
             andmebaas.Update(item);
             return item.Id;
         }
+        //Проблема с добавлением
         public int LooUksus(Vaartused item)
         {
             return andmebaas.Insert(item);

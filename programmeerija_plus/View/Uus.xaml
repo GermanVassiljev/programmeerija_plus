@@ -3,13 +3,35 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="programmeerija_plus.View.Uus">
     <StackLayout BackgroundColor="SkyBlue">
-        <Label x:Name="label1"  Text="Pealkiri" FontSize="Medium" BackgroundColor="MidnightBlue" TextColor="White"/>
-        <Entry Text="{Binding Title}"/>
-        <Label x:Name="label2" Text="Tegevused" FontSize="Medium"/>
-        <Entry  Text="{Binding Tegevused}"/>
-        <Label x:Name="label3" Text="Fail" FontSize="Medium"/>
-        <Entry Text="{Binding Fail}"/>
-        <Label x:Name="label4" Text="Kuni" FontSize="Medium"/>
+        <Label Text="Pealkiri"
+               FontSize="Medium"
+               BackgroundColor="MidnightBlue"
+               TextColor="White"
+               />
+        <Entry Text="{Binding Title}"
+               Placeholder="Kirjutage pealkiri"
+               x:Name="pealkiri_"/>
+        <Label Text="Tegevused"
+               FontSize="Medium"
+               BackgroundColor="MidnightBlue"
+               TextColor="White"
+               />
+        <Entry Text="{Binding Tegevused}"
+               Placeholder="Kirjutage tegevused"
+               x:Name="tegevused_"/>
+        <Label Text="Fail"
+               FontSize="Medium"
+               BackgroundColor="MidnightBlue"
+               TextColor="White"
+               />
+        <Entry Text="{Binding Fail}"
+               Placeholder="Kui vaja, kirjutage failid"
+               x:Name="fail_"/>
+        <Label Text="Kuni"
+               FontSize="Medium"
+               BackgroundColor="MidnightBlue"
+               TextColor="White"
+               />
         <DatePicker 
             MinimumDate="1/1/2023"
             MaximumDate="12/31/2050"

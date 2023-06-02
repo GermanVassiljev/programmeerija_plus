@@ -22,7 +22,7 @@
                             <StackLayout 
                                 Orientation="Horizontal"
                                 BackgroundColor="MidnightBlue"
-                                Margin="10"
+                                Margin="5"
                                 >
                                 
                                 <Label 
@@ -30,6 +30,7 @@
                                     FontSize="Medium"
                                     TextColor="White"
                                     />
+                                
                                 <Label 
                                     Text="{Binding Title}" 
                                     FontSize="Medium"

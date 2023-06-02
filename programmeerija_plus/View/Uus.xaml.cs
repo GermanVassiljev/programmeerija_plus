@@ -25,11 +25,28 @@ namespace programmeerija_plus.View
         }
         private async void LooPlaan(object sender, EventArgs e)
         {
-            var plaan = (Vaartused)BindingContext;
+            
+            if (pealkiri_.Text == null || tegevused_.Text == null)
+            {
+                if (pealkiri_.Text == null)
+                {
+                    await DisplayAlert("Tähelepanu", "Te pole andmeid sisestanud. Kirjutage pealkiri, palun.", "Ok");
+                }
+                else if (tegevused_.Text == null)
+                {
+                    await DisplayAlert("Tähelepanu", "Te pole andmeid sisestanud. Kirjutage tegevused, palun.", "Ok");
+                } 
+            }
+            else
+            {
+                var plaan = (Vaartused)BindingContext;
+                App.andmebaas.LooUksus(plaan);
+                await Navigation.PopAsync();
+            }
+            
+            //await DisplayAlert("Test", App.andmebaas.LooUksus(plaan).ToString(), "ok");
 
-            App.andmebaas.LooUksus(plaan);
-
-            await Navigation.PopAsync();
+  
         }
         private async void Sulge(object sender, EventArgs e)
         {

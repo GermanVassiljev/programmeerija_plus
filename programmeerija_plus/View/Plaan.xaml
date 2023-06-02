@@ -12,9 +12,21 @@
         <Label Text="Kuni"/>
         <DatePicker Date="{Binding Kuni}"/>
         <StackLayout Orientation="Horizontal">
-            <Button Text="Salvesta" Clicked="SalvestaPlaan"/>
-            <Button Text="Kustuta" Clicked="KustutaPlaan"/>
-            <Button Text="Sulge" Clicked="Sulge"/>
+            <Button Text="Salvesta"
+                    Clicked="SalvestaPlaan"
+                    BackgroundColor="DarkGreen"
+                    TextColor="White"
+                    />
+            <Button Text="Kustuta" 
+                    Clicked="KustutaPlaan"
+                    BackgroundColor="DarkRed"
+                    TextColor="White"
+                    />
+            <Button Text="Sulge" 
+                    Clicked="Sulge"
+                    BackgroundColor="SlateGray"
+                    TextColor="White"
+                    />
         </StackLayout>
     </StackLayout>
 </ContentPage>
