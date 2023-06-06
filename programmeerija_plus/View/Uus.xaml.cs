@@ -21,6 +21,7 @@ namespace programmeerija_plus.View
 
         protected override void OnAppearing()
         {
+            UusList.ItemsSource = App.Andmebaas.HangiUksus();
             base.OnAppearing();
         }
         private async void LooPlaan(object sender, EventArgs e)

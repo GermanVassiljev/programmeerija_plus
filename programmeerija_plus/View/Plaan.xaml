@@ -11,6 +11,14 @@
         <Entry Text="{Binding Fail}"/>
         <Label Text="Kuni"/>
         <DatePicker Date="{Binding Kuni}"/>
+        <Label 
+            Text="Alates: " 
+            />
+        <Label 
+            Text="{Binding Alates}" 
+            FontSize="Medium"
+            TextColor="Black"
+            />
         <StackLayout Orientation="Horizontal">
             <Button Text="Salvesta"
                     Clicked="SalvestaPlaan"

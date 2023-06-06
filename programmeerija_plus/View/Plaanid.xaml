@@ -22,30 +22,41 @@
                             <StackLayout 
                                 Orientation="Horizontal"
                                 BackgroundColor="MidnightBlue"
-                                Margin="5"
+                                Margin="2"
                                 >
-                                
-                                <Label 
-                                    Text="Pealkiri: " 
-                                    FontSize="Medium"
-                                    TextColor="White"
-                                    />
-                                
-                                <Label 
-                                    Text="{Binding Title}" 
-                                    FontSize="Medium"
-                                    TextColor="White"
-                                    />
-                                <Label 
-                                    Text="{Binding Kuni}" 
-                                    FontSize="Medium"
-                                    TextColor="White"
-                                    />
-                                <Label 
-                                    Text="{Binding Tegevused}" 
-                                    FontSize="Medium"
-                                    TextColor="White"
-                                    />
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Column="0"
+                                        Text="{Binding Title}" 
+                                        FontSize="Large"
+                                        TextColor="White"
+                                        />
+                                    <Label Grid.Column="1"
+                                        Text="Kuni: " 
+                                        FontSize="Medium"
+                                        TextColor="White"
+                                        />
+                                    <Label Grid.Column="2"
+                                        Text="{Binding Kuni}" 
+                                        FontSize="Small"
+                                        TextColor="White"
+                                        />
+                                    <Label Grid.Column="3"
+                                        Text="Alates: " 
+                                        FontSize="Medium"
+                                        TextColor="White"
+                                        />
+                                    <Label Grid.Column="4"
+                                        Text="{Binding Alates}" 
+                                        FontSize="Small"
+                                        TextColor="White"
+                                        />
+                                </Grid>
+
 
                             </StackLayout>
                         </ViewCell.View>

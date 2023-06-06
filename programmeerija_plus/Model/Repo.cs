@@ -31,10 +31,18 @@ namespace programmeerija_plus.Model
             andmebaas.Update(item);
             return item.Id;
         }
-        //Проблема с добавлением
         public int LooUksus(Vaartused item)
         {
-            return andmebaas.Insert(item);
+            if (item.Id != 0)
+            {
+                andmebaas.Update(item);
+                return item.Id;
+            }
+            else
+            {
+                return andmebaas.Insert(item);
+            }
+            
         }
     }
 }
