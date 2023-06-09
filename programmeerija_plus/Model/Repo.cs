@@ -8,7 +8,7 @@ namespace programmeerija_plus.Model
     public class Repo
     {
         SQLiteConnection andmebaas;
-        
+
         public Repo(string databasePath)
         {
             andmebaas = new SQLiteConnection(databasePath);

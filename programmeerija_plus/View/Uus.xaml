@@ -3,68 +3,56 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              x:Class="programmeerija_plus.View.Uus">
-    <ListView
-            x:Name="UusList" 
-            ItemsSource="{Binding}" 
-        >
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <StackLayout BackgroundColor="SkyBlue">
-                           <Label Text="Pealkiri"
-                                  FontSize="Medium"
-                                  BackgroundColor="MidnightBlue"
-                                  TextColor="White"
-                                  />
-                           <Entry Text="{Binding Title}"
-                                  Placeholder="Kirjutage pealkiri"
-                                  x:Name="pealkiri_"/>
-                           <Label Text="Tegevused"
-                                  FontSize="Medium"
-                                  BackgroundColor="MidnightBlue"
-                                  TextColor="White"
-                                  />
-                           <Entry Text="{Binding Tegevused}"
-                                  Placeholder="Kirjutage tegevused"
-                                  x:Name="tegevused_"/>
-                           <Label Text="Fail"
-                                  FontSize="Medium"
-                                  BackgroundColor="MidnightBlue"
-                                  TextColor="White"
-                                  />
-                           <Entry Text="{Binding Fail}"
-                                  Placeholder="Kui vaja, kirjutage failid"
-                                  x:Name="fail_"/>
-                           <Label Text="Kuni"
-                                  FontSize="Medium"
-                                  BackgroundColor="MidnightBlue"
-                                  TextColor="White"
-                                  />
-                           <DatePicker 
-                               MinimumDate="{x:Static sys:DateTime.Now}"
-                               MaximumDate="12/31/2050"
-                               Date="{x:Static sys:DateTime.Now, Binding Kuni}"/>
-                           <DatePicker 
-                       
-                               Date="{x:Static sys:DateTime.Now, Binding Alates}"
-                               IsVisible="False"/>
-                           <Button 
-                                   Text="Loo" 
-                                   Clicked="LooPlaan"
-                                   BackgroundColor="DarkGreen"
-                                   TextColor="White"
-                                   HorizontalOptions="Center"
-                                   />
-                                   <Button 
-                                   Text="Sulge" 
-                                   Clicked="Sulge"
-                                   BackgroundColor="SlateGray"
-                                   TextColor="White"
-                                   HorizontalOptions="Center"
-                                   />
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+
+    <StackLayout BackgroundColor="SkyBlue">
+        <Label Text="Pealkiri"
+            FontSize="Medium"
+            BackgroundColor="MidnightBlue"
+            TextColor="White"
+            />
+        <Entry Text="{Binding Title}"
+            Placeholder="Kirjutage pealkiri"
+            x:Name="pealkiri_"/>
+        <Label Text="Tegevused"
+            FontSize="Medium"
+            BackgroundColor="MidnightBlue"
+            TextColor="White"
+            />
+        <Entry Text="{Binding Tegevused}"
+            Placeholder="Kirjutage tegevused"
+            x:Name="tegevused_"/>
+        <Label Text="Fail"
+            FontSize="Medium"
+            BackgroundColor="MidnightBlue"
+            TextColor="White"
+            />
+        <Entry Text="{Binding Fail}"
+            Placeholder="Kui vaja, kirjutage failid"
+            x:Name="fail_"/>
+        <Label Text="Kuni"
+            FontSize="Medium"
+            BackgroundColor="MidnightBlue"
+            TextColor="White"
+            />
+        <DatePicker 
+            MinimumDate="{x:Static sys:DateTime.Now}"
+            MaximumDate="12/31/2050"
+            Date="{Binding Kuni}"/>
+        <DatePicker 
+            x:Name="tana"
+            Date="{Binding Alates}"
+            IsVisible="False"/>
+        <Button 
+            Text="Loo" 
+            Clicked="LooPlaan"
+            BackgroundColor="DarkGreen"
+            TextColor="White"
+            />
+        <Button 
+            Text="Sulge" 
+            Clicked="Sulge"
+            BackgroundColor="SlateGray"
+            TextColor="White"
+            />
+    </StackLayout>
 </ContentPage>

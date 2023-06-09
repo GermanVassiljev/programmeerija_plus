@@ -4,11 +4,12 @@ using programmeerija_plus.View;
 using System;
 using System.IO;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using Xamarin.Forms.Xaml;
 
 namespace programmeerija_plus
 {
-    public partial class App : Application
+    public partial class App : Xamarin.Forms.Application
     {
         public const string ANDMEBAAS_NIMI = "vaartused.db";
         public static Repo andmebaas;
@@ -24,15 +25,18 @@ namespace programmeerija_plus
                 return andmebaas;
             }
         }
+        public static string Teema { get; set; }
         public App()
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new View.Menu());
+            MainPage = new Xamarin.Forms.NavigationPage(new View.Menu());
         }
 
         protected override void OnStart()
         {
+            base.OnStart();
+            Teema = "Klassikaline";
         }
 
         protected override void OnSleep()

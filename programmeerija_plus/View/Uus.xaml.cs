@@ -21,7 +21,7 @@ namespace programmeerija_plus.View
 
         protected override void OnAppearing()
         {
-            UusList.ItemsSource = App.Andmebaas.HangiUksus();
+            //UusList.ItemsSource = App.Andmebaas.HangiUksus();
             base.OnAppearing();
         }
         private async void LooPlaan(object sender, EventArgs e)
@@ -40,6 +40,7 @@ namespace programmeerija_plus.View
             }
             else
             {
+                tana.Date = DateTime.Now;
                 var plaan = (Vaartused)BindingContext;
                 App.andmebaas.LooUksus(plaan);
                 await Navigation.PopAsync();

@@ -2,11 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace programmeerija_plus.View
 {
@@ -14,13 +17,15 @@ namespace programmeerija_plus.View
     public partial class Menu : ContentPage
     {
         List<string> nuppid = new List<string> {"Plaanid", "Uus","Sätted" };
+        StackLayout layout = new StackLayout();
+        List<Button> nuppid_ = new List<Button>();
+        Label Tekst;
         public Menu()
         {
             InitializeComponent();
-            StackLayout layout = new StackLayout();
             layout.BackgroundColor = Color.SkyBlue;
 
-            Label Tekst = new Label
+            Tekst = new Label
             {
                 HorizontalOptions = LayoutOptions.Center,
                 BackgroundColor = Color.MidnightBlue,
@@ -46,11 +51,21 @@ namespace programmeerija_plus.View
                     Margin = 10,
                     CornerRadius = 10,
                 };
+                nuppid_.Add(e);
                 e.Clicked += E_Clicked;
                 layout.Children.Add(e);
             }
             Content= layout;
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            //App.Teema = "Klassikaline";
+            Teemad();
+
+        }
+
 
         private async void E_Clicked(object sender, EventArgs e)
         {
@@ -69,6 +84,48 @@ namespace programmeerija_plus.View
             else if (nupp.Text == nuppid[2])
             { 
                 await Navigation.PushAsync(new NavigationPage(new Satted()));
+            }
+        }
+        private void Teemad()
+        {
+            if (App.Teema == "Klassikaline")
+            {
+                layout.BackgroundColor = Color.SkyBlue;
+
+                foreach (var nuppid in nuppid_)
+                {
+                    nuppid.BackgroundColor = Color.MidnightBlue;
+                    nuppid.TextColor = Color.White;
+                }
+
+                Tekst.BackgroundColor = Color.MidnightBlue;
+                Tekst.TextColor = Color.White;
+            }
+            else if (App.Teema == "Tume")
+            {
+                layout.BackgroundColor = Color.DarkBlue;
+
+                foreach (var nuppid in nuppid_)
+                {
+                    nuppid.BackgroundColor = Color.MidnightBlue;
+                    nuppid.TextColor = Color.White;
+                }
+
+                Tekst.BackgroundColor = Color.MidnightBlue;
+                Tekst.TextColor = Color.White;
+            }
+            else
+            {
+                layout.BackgroundColor = Color.LightBlue;
+
+                foreach (var nuppid in nuppid_)
+                {
+                    nuppid.BackgroundColor = Color.SkyBlue;
+                    nuppid.TextColor = Color.Black;
+                }
+
+                Tekst.BackgroundColor = Color.SkyBlue;
+                Tekst.TextColor = Color.Black;
             }
         }
     }
